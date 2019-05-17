@@ -37,7 +37,7 @@ class Bullet(Sprite):
         self.speed = 10
         self.vx = self.speed * math.sin(direction)
         self.vy = self.speed * math.cos(direction)
-        self.deltavy = 1
+        self.deltavy = 0.1
         self.vr = 0
         self.fxcenter = self.fycenter = 0.5
         self.bulletphase = 0
