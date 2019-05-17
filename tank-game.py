@@ -110,9 +110,6 @@ class TankGame(App):
         
         MissileCommandGame.listenKeyEvent("keydown", "space", self.toggleTurns)
         
-        
-        
-        
         self.player1 = Turret((10,10), 1)
         self.player2 = Turret((100, 100), 2)
         
@@ -122,9 +119,12 @@ class TankGame(App):
         else:
             self.playerturn == 1
     
-    
     def step(self):
         if self.playerturn == 1:
             self.player1.step()
         elif self.playerturn == 2:
             self.player2.step()
+            
+myapp = TankGame()
+myapp.run()
+            
