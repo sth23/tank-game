@@ -69,7 +69,7 @@ class Turrain(Sprite):
         super().__init__(asset, position)
 
 class Turret(Sprite):
-    def __init__(self, position, player, color):
+    def __init__(self, position, player, turn, color):
         super().__init__(RectangleAsset(5, 40, noline, color), position)
         self.vr = 0
         self.maxspin = 0.05
