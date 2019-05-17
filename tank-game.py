@@ -205,6 +205,8 @@ class TankGame(App):
                         print("Player 2 turn")
                     self.loser = []
                     self.placePlayers()
+                    for x in self.getSpritesbyClass(Turrain):
+                        x.destroy()
                     self.createTurrain()
 
                         
