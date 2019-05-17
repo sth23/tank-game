@@ -101,8 +101,8 @@ class Turret(Sprite):
             self.power -= 1
         print(self.power)
         
-    def shoot(self, event, self.power):
-        Bullet((self.x + 80 * math.sin(self.rotation), self.y + 80 * math.cos(self.rotation)), self.rotation)
+    def shoot(self, event):
+        Bullet((self.x + 80 * math.sin(self.rotation), self.y + 80 * math.cos(self.rotation)), self.rotation, self.power)
         
     def step(self):
         self.rotation += self.vr
