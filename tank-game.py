@@ -67,8 +67,10 @@ class Turret(Sprite):
         self.player = player
         
         # Rotate right/left
-        TankGame.listenKeyEvent("keydown", "left arrow", self.aimLeft)
-        TankGame.listenKeyEvent("keydown", "right arrow", self.aimRight)
+        TankGame.listenKeyEvent("keydown", "left arrow", self.aimLeftOn)
+        TankGame.listenKeyEvent("keydown", "left arrow", self.aimLeftOff)
+        TankGame.listenKeyEvent("keydown", "right arrow", self.aimRightOn)
+        TankGame.listenKeyEvent("keydown", "right arrow", self.aimRightOff)
         
         # Adjust power
         TankGame.listenKeyEvent("keydown", "up arrow", self.powerUp)
@@ -77,11 +79,17 @@ class Turret(Sprite):
         # Shoot
         TankGame.listenKeyEvent("keydown", "space", self.shoot)
         
-    def aimRight(self, event):
+    def aimRightOn(self, event):
         self.vr = -self.maxspin
         
-    def aimLeft(self, event):
+    def aimRightOff(self, event):
+        self.vr = 0
+        
+    def aimLeftOn(self, event):
         self.vr = self.maxspin
+        
+    def aimLeftOff(self, event):
+        self.vr = 0
         
     def powerUp(self, event):
         if self.power < 20:
