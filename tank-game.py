@@ -134,6 +134,9 @@ class TankGame(App):
         elif self.playerturn == 2:
             self.player2.step()
             
+        for bullet in self.getSpritesbyClass(Bullet):
+            bullet.step()
+
 myapp = TankGame()
 myapp.run()
             
