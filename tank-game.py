@@ -139,7 +139,7 @@ class TankGame(App):
         TankGame.listenKeyEvent("keyup", "space", self.toggleTurns)
         
         self.player1 = Turret((100,100), 1, True, red)
-        self.player2 = Turret((200, 200), 2, False, blue)
+        self.player2 = Turret((500, 200), 2, False, blue)
         self.loser = []
         self.winner = False
         
