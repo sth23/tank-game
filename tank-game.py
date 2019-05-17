@@ -94,10 +94,12 @@ class Turret(Sprite):
     def powerUp(self, event):
         if self.power < 20:
             self.power += 1
+        print(self.power)
             
     def powerDown(self, event):
         if self.power > 1:
             self.power -= 1
+        print(self.power)
         
     def shoot(self, event):
         Bullet((self.x + 80 * math.sin(self.rotation), self.y + 80 * math.cos(self.rotation)), self.rotation)
