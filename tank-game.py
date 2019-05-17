@@ -140,6 +140,7 @@ class TankGame(App):
         
         self.player1 = Turret((100,100), 1, True, red)
         self.player2 = Turret((200, 200), 2, False, blue)
+        self.loser = []
         
         self.turrainheight = 0
         self.turrainwidth = 20
@@ -170,10 +171,11 @@ class TankGame(App):
             if bullet.x < 0 or bullet.x > self.width or bullet.y > self.height:
                 bullet.destroy()
             else:
-                if bullet.collidingWithSprites(Turret):
+                self.loser = bullet.collidingWithSprites(Turret)
+                    if self.loser:
                     Explosion((bullet.x, bullet.y))
                     bullet.destroy()
-                    if self.player1.turn == False:
+                    if self.loser[0].player == 2:
                         print("Player 1 wins!")
                         self.player1.turn = True
                         self.player2.turn = False
