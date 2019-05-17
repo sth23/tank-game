@@ -56,7 +56,7 @@ class Turret(Sprite):
     noline = LineStyle(0, black)
     rect = RectangleAsset(5, 40, noline, black)
     
-    def __init__(self, position, player):
+    def __init__(self, position, player, turn):
         super().__init__(Turret.rect, position)
         self.vr = 0
         self.maxspin = 0.05
@@ -65,6 +65,7 @@ class Turret(Sprite):
         self.fycenter = 0
         self.power = 0
         self.player = player
+        self.turn = True
         
         # Rotate right/left
         TankGame.listenKeyEvent("keydown", "left arrow", self.aimLeftOn)
@@ -118,12 +119,13 @@ class TankGame(App):
         
         TankGame.listenKeyEvent("keyup", "space", self.toggleTurns)
         
-        self.player1 = Turret((100,100), 1)
-        self.player2 = Turret((200, 200), 2)
+        self.player1 = Turret((100,100), 1, True)
+        self.player2 = Turret((200, 200), 2, False)
         
     def toggleTurns(self, event):
         if self.playerturn == 1:
             self.playerturn = 2
+            self.player
         else:
             self.playerturn = 1
     
