@@ -141,7 +141,6 @@ class TankGame(App):
         self.player1 = Turret((100,100), 1, True, red)
         self.player2 = Turret((500, 200), 2, False, blue)
         self.loser = []
-        self.winner = False
         
         self.turrainheight = 0
         self.turrainwidth = 20
@@ -151,11 +150,11 @@ class TankGame(App):
         if self.player1.turn == True:
             self.player1.turn = False
             self.player2.turn = True
-            print("Player 2 Turn")
+            print("Player 2 turn")
         else:
             self.player1.turn = True
             self.player2.turn = False
-            print("Player 1 Turn")
+            print("Player 1 turn")
             
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
@@ -182,10 +181,12 @@ class TankGame(App):
                         print("Player 1 wins!")
                         self.player1.turn = True
                         self.player2.turn = False
+                        print("Player 1 turn")
                     else:
                         print("Player 2 wins!")
                         self.player1.turn = False
                         self.player2.turn = True
+                        print("Player 2 turn")
                     self.loser = []
                         
                 elif bullet.collidingWithSprites(Turrain):
