@@ -120,7 +120,7 @@ class TankGame(App):
         self.player2 = Turret((200, 200), 2)
         
     def toggleTurns(self, event):
-        if self.playerturn == 1:
+        if self.playerturn == 2:
             self.playerturn == 2
         else:
             self.playerturn == 1
