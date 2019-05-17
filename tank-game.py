@@ -9,6 +9,9 @@ from ggame import App, RectangleAsset, CircleAsset, LineAsset, ImageAsset, Frame
 import math
 import random
 
+black = Color(0, 1)
+noline = LineStyle(0, black)
+
 class Explosion(Sprite):
     asset = ImageAsset("explosion1.png", Frame(0,0,128,128), 10, 'horizontal')
     
@@ -50,10 +53,12 @@ class Bullet(Sprite):
         # manage bullet animation
         self.setImage(self.bulletphase%7)
         self.bulletphase += 1
+        
+class Turrain(Sprite):
+    def __init__(self, asset, position):
+        super().__init__(asset, position)
 
 class Turret(Sprite):
-    black = Color(0, 1)
-    noline = LineStyle(0, black)
     rect = RectangleAsset(5, 40, noline, black)
     
     def __init__(self, position, player, turn):
@@ -135,6 +140,9 @@ class TankGame(App):
         else:
             self.player1.turn = True
             self.player2.turn = False
+            
+    def createTurrain(self):
+        
     
     def step(self):
         self.player1.step()
