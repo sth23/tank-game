@@ -159,7 +159,9 @@ class TankGame(App):
             
     def placePlayers(self):
         self.player1.x = random.randint(2, (self.width // 10) // 3)
+        print(self.player1.x)
         self.player2.x = random.randint((self.width // 10) * 2 // 3, self.width // 10 - 2)
+        print(self.player2.x)
             
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
