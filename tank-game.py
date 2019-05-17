@@ -159,7 +159,9 @@ class TankGame(App):
             
     def placePlayers(self):
         self.player1.x = random.randint(2, (self.width // self.turrainwidth) // 3)
+        print(self.player1.x)
         self.player2.x = random.randint((self.width // self.turrainwidth) * 2 // 3, self.width // self.turrainwidth - 2)
+        print(self.player2.x)
             
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
@@ -168,10 +170,6 @@ class TankGame(App):
             if self.turrainheight > self.height - 10:
                 self.turrainheight -= 50
             Turrain(RectangleAsset(self.turrainwidth, self.height * 2, noline, black), (x * self.turrainwidth, self.turrainheight))
-            if x * self.turrainwidth == self.player1.x:
-                self.player1.y = self.turrainheight - 100
-            elif x * self.turrainwidth == self.player2.x:
-                self.player2.y = self.turrainheight - 100
     
     def step(self):
         self.player1.step()
