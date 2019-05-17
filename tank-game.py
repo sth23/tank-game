@@ -172,10 +172,10 @@ class TankGame(App):
                 bullet.destroy()
             else:
                 if bullet.collidingWithSprites(Turret):
-                    for x in bullet.collidingWithSprites(Turret):
-                        Explosion((bullet.x, bullet.y))
-                        bullet.destroy()
+                    Explosion((bullet.x, bullet.y))
+                    bullet.destroy()
                 elif bullet.collidingWithSprites(Turrain):
+                    Explosion((bullet.x, bullet.y))
                     bullet.destroy()
                     
         for explosion in self.getSpritesbyClass(Explosion):
