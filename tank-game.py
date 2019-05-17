@@ -145,7 +145,7 @@ class TankGame(App):
             if bullet.x < 0 or bullet.x > self.width or bullet.y > self.height:
                 bullet.destroy()
             else:
-                for x in bullet.collidingWithSprites(Turret)
+                for x in bullet.collidingWithSprites(Turret):
                     Explosion((bullet.x, bullet.y))
             
         # Winner starts next round
