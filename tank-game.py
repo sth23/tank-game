@@ -81,29 +81,36 @@ class Turret(Sprite):
         TankGame.listenKeyEvent("keydown", "space", self.shoot)
         
     def aimRightOn(self, event):
-        self.vr = -self.maxspin
+        if self.turn:
+            self.vr = -self.maxspin
         
     def aimRightOff(self, event):
-        self.vr = 0
+        if self.turn:
+            self.vr = 0
         
     def aimLeftOn(self, event):
-        self.vr = self.maxspin
+        if self.turn:
+            self.vr = self.maxspin
         
     def aimLeftOff(self, event):
-        self.vr = 0
+        if self.turn:
+            self.vr = 0
         
     def powerUp(self, event):
-        if self.power < 20:
-            self.power += 0.5
-            print(self.power)
+        if self.turn:        
+            if self.power < 20:
+                self.power += 0.5
+                print(self.power)
             
     def powerDown(self, event):
-        if self.power > 1:
-            self.power -= 0.5
-            print(self.power)
+        if self.turn:
+            if self.power > 1:
+                self.power -= 0.5
+                print(self.power)
         
     def shoot(self, event):
-        Bullet((self.x + 80 * math.sin(self.rotation), self.y + 80 * math.cos(self.rotation)), self.rotation, self.power)
+        if self.turn:
+            Bullet((self.x + 80 * math.sin(self.rotation), self.y + 80 * math.cos(self.rotation)), self.rotation, self.power)
         
     def step(self):
         self.rotation += self.vr
@@ -115,7 +122,6 @@ class Turret(Sprite):
 class TankGame(App):
     def __init__(self):
         super().__init__()
-        self.playerturn = 1
         
         TankGame.listenKeyEvent("keyup", "space", self.toggleTurns)
         
@@ -123,17 +129,16 @@ class TankGame(App):
         self.player2 = Turret((200, 200), 2, False)
         
     def toggleTurns(self, event):
-        if self.playerturn == 1:
-            self.playerturn = 2
-            self.player
+        if self.player1.turn == True:
+            self.player1.turn = False
+            self.player2.turn = True
         else:
-            self.playerturn = 1
+            self.player1.turn = True
+            self.player2.turn = False
     
     def step(self):
-        if self.playerturn == 1:
-            self.player1.step()
-        elif self.playerturn == 2:
-            self.player2.step()
+        self.player1.step()
+        self.player2.step()
             
         for bullet in self.getSpritesbyClass(Bullet):
             bullet.step()
