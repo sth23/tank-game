@@ -93,12 +93,12 @@ class Turret(Sprite):
         
     def powerUp(self, event):
         if self.power < 10:
-            self.power += 1
+            self.power += 0.5
         print(self.power)
             
     def powerDown(self, event):
         if self.power > 1:
-            self.power -= 1
+            self.power -= 0.5
         print(self.power)
         
     def shoot(self, event):
