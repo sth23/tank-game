@@ -158,7 +158,7 @@ class TankGame(App):
             print("Player 1 turn")
             
     def placePlayers(self):
-        self.player1.x = random.randint(2, (self.width // ) self.turrainwidth// 3)
+        self.player1.x = random.randint(2, (self.width // self.turrainwidth) // 3)
         print(self.player1.x)
         self.player2.x = random.randint((self.width // self.turrainwidth) * 2 // 3, self.width // self.turrainwidth - 2)
         print(self.player2.x)
