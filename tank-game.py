@@ -147,6 +147,9 @@ class TankGame(App):
             else:
                 for x in bullet.collidingWithSprites(Turret):
                     Explosion((bullet.x, bullet.y))
+                    
+        for explosion in self.getSpritesbyClass(Explosion):
+            explosion.step()
             
         # Winner starts next round
 
