@@ -147,14 +147,17 @@ class TankGame(App):
         self.createTurrain()
         
     def toggleTurns(self, event):
-        if self.player1.turn == True:
-            self.player1.turn = False
-            self.player2.turn = True
-            print("Player 2 Turn")
+        if self.winner == False
+            if self.player1.turn == True:
+                self.player1.turn = False
+                self.player2.turn = True
+                print("Player 2 Turn")
+            else:
+                self.player1.turn = True
+                self.player2.turn = False
+                print("Player 1 Turn")
         else:
-            self.player1.turn = True
-            self.player2.turn = False
-            print("Player 1 Turn")
+            self.winner = False
             
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
@@ -175,6 +178,7 @@ class TankGame(App):
             else:
                 self.loser = bullet.collidingWithSprites(Turret)
                 if self.loser:
+                    self.winner = True
                     Explosion((bullet.x, bullet.y))
                     bullet.destroy()
                     if self.loser[0].player == 2:
