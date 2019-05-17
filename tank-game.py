@@ -173,7 +173,7 @@ class TankGame(App):
                 if bullet.collidingWithSprites(Turret):
                     Explosion((bullet.x, bullet.y))
                     bullet.destroy()
-                    if self.player1.turn == True:
+                    if self.player1.turn == False:
                         print("Player 1 wins!")
                         self.player1.turn = True
                         self.player2.turn = False
