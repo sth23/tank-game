@@ -124,11 +124,8 @@ class TankGame(App):
     def toggleTurns(self, event):
         if self.playerturn == 1:
             self.playerturn = 2
-            print("if")
         else:
             self.playerturn = 1
-            print("else")
-        print(self.playerturn)
     
     def step(self):
         if self.playerturn == 1:
