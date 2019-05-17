@@ -65,7 +65,7 @@ class Turret(Sprite):
         self.fycenter = 0
         self.power = 0
         self.player = player
-        self.turn = True
+        self.turn = turn
         
         # Rotate right/left
         TankGame.listenKeyEvent("keydown", "left arrow", self.aimLeftOn)
