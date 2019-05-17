@@ -33,7 +33,7 @@ class Bullet(Sprite):
     asset = ImageAsset("blast.png", Frame(0,0,8,8), 8, 'horizontal')
     
     def __init__(self, position, direction, power):
-        super().__init__(Bullet.asset, [position[0] - 60 * math.sin(direction), position[1] - 60 * math.cos(direction)], CircleAsset(10))
+        super().__init__(Bullet.asset, [position[0] - 70 * math.sin(direction), position[1] - 70 * math.cos(direction)], CircleAsset(10))
         self.speed = power
         self.vx = self.speed * math.sin(direction)
         self.vy = self.speed * math.cos(direction)
