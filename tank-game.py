@@ -173,7 +173,7 @@ class TankGame(App):
             if x * self.turrainwidth == self.player1.x:
                 self.player1.y = 50    # = self.turrainheight - 100
             elif x * self.turrainwidth == self.player2.x:
-                self.player2.y 50 # = self.turrainheight - 100
+                self.player2.y = 50 # = self.turrainheight - 100
     
     def step(self):
         self.player1.step()
