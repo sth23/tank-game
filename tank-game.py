@@ -76,7 +76,7 @@ class Turret(Sprite):
         self.rotation = math.pi
         self.fxcenter = 0.5
         self.fycenter = 0
-        self.power = 0
+        self.power = 1
         self.player = player
         self.turn = turn
         
@@ -113,13 +113,13 @@ class Turret(Sprite):
         if self.turn:        
             if self.power < 20:
                 self.power += 0.5
-        print("Power: " + str(self.power))
+            print("Power: " + str(self.power))
             
     def powerDown(self, event):
         if self.turn:
             if self.power > 1:
                 self.power -= 0.5
-        print("Power: " + str(self.power))
+            print("Power: " + str(self.power))
         
     def shoot(self, event):
         if self.turn:
