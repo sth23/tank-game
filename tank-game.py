@@ -172,7 +172,7 @@ class TankGame(App):
                 bullet.destroy()
             else:
                 self.loser = bullet.collidingWithSprites(Turret)
-                    if self.loser:
+                if self.loser:
                     Explosion((bullet.x, bullet.y))
                     bullet.destroy()
                     if self.loser[0].player == 2:
