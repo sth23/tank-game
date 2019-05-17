@@ -145,7 +145,7 @@ class TankGame(App):
             
     def createTurrain(self):
         for x in range(0, self.width // 10):
-            self.turrainheight = self.turrainheight + random.randint(-20, 20)
+            self.turrainheight = self.turrainheight + random.randint(-40, 40)
             Turrain(RectangleAsset(self.turrainwidth, self.height, noline, black), (x * self.turrainwidth, self.turrainheight))
             print(self.turrainheight)
     
