@@ -69,15 +69,15 @@ class Turret(Sprite):
         self.player = player
         
         # Rotate right/left
-        MissileCommandGame.listenKeyEvent("keydown", "left arrow", self.aimLeftOn)
-        MissileCommandGame.listenKeyEvent("keydown", "right arrow", self.aimRightOn)
+        TankGame.listenKeyEvent("keydown", "left arrow", self.aimLeftOn)
+        TankCommandGame.listenKeyEvent("keydown", "right arrow", self.aimRightOn)
         
         # Adjust power
-        MissileCommandGame.listenKeyEvent("keydown", "up arrow", self.powerUp)
-        MissileCommandGame.listenKeyEvent("keydown", "down arrow", self.powerDown)
+        TankCommandGame.listenKeyEvent("keydown", "up arrow", self.powerUp)
+        TankCommandGame.listenKeyEvent("keydown", "down arrow", self.powerDown)
         
         # Shoot
-        MissileCommandGame.listenKeyEvent("keydown", "space", self.shoot)
+        TankCommandGame.listenKeyEvent("keydown", "space", self.shoot)
         
     def aimRight(self, event):
         self.vr = -self.maxspin
@@ -108,7 +108,7 @@ class TankGame(App):
         super().__init__()
         self.playerturn = 1
         
-        MissileCommandGame.listenKeyEvent("keydown", "space", self.toggleTurns)
+        TankGame.listenKeyEvent("keydown", "space", self.toggleTurns)
         
         self.player1 = Turret((10,10), 1)
         self.player2 = Turret((100, 100), 2)
