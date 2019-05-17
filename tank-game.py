@@ -168,9 +168,9 @@ class TankGame(App):
                 self.turrainheight -= 50
             Turrain(RectangleAsset(self.turrainwidth, self.height * 2, noline, black), (x * self.turrainwidth, self.turrainheight))
             if x == self.player1.x:
-                self.player1.y = self.turrainheight
+                self.player1.y = self.turrainheight - 50
             elif x == self.player2.x:
-                self.player2.y = self.turrainheight
+                self.player2.y = self.turrainheight - 50
     
     def step(self):
         self.player1.step()
