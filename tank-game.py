@@ -169,6 +169,8 @@ class TankGame(App):
             self.turrainheight = self.turrainheight + random.randint(-40, 40)
             if self.turrainheight > self.height - 10:
                 self.turrainheight -= 50
+            elif self.turrainheight < 50:
+                self.turrainheight += 50
             Turrain(RectangleAsset(self.turrainwidth, self.height * 2, noline, black), (x * self.turrainwidth, self.turrainheight))
     
     def step(self):
