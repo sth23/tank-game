@@ -144,6 +144,7 @@ class TankGame(App):
         
         self.turrainheight = 0
         self.turrainwidth = 20
+        self.placePlayers()
         self.createTurrain()
         
     def toggleTurns(self, event):
@@ -168,9 +169,9 @@ class TankGame(App):
                 self.turrainheight -= 50
             Turrain(RectangleAsset(self.turrainwidth, self.height * 2, noline, black), (x * self.turrainwidth, self.turrainheight))
             if x == self.player1.x:
-                self.player1.y = self.turrainheight - 50
+                self.player1.y = self.turrainheight - 100
             elif x == self.player2.x:
-                self.player2.y = self.turrainheight - 50
+                self.player2.y = self.turrainheight - 100
     
     def step(self):
         self.player1.step()
