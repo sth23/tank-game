@@ -58,6 +58,7 @@ class Turret(Sprite):
     
     def __init__(self, position, player):
         super().__init__(Turret.rect, position)
+        self.vr = 0
         self.maxspin = 0.05
         self.rotation = math.pi
         self.fxcenter = 0.5
