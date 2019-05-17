@@ -138,8 +138,8 @@ class TankGame(App):
         
         TankGame.listenKeyEvent("keyup", "space", self.toggleTurns)
         
-        self.player1 = Turret((100,100), 1, True, red)
-        self.player2 = Turret((500, 200), 2, False, blue)
+        self.player1 = Turret((-20, -20), 1, True, red)
+        self.player2 = Turret((-20, -20), 2, False, blue)
         self.loser = []
         
         self.turrainheight = 0
@@ -156,13 +156,21 @@ class TankGame(App):
             self.player2.turn = False
             print("Player 1 turn")
             
+    def placePlayers(self):
+        self.player1.x = random.randint(2, (self.width // 10) // 3)
+        self.player2.x = random.randint((self.width // 10) * 2 //3, self.width - 2)
+            
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
         for x in range(0, self.width // 10):
             self.turrainheight = self.turrainheight + random.randint(-40, 40)
             if self.turrainheight > self.height - 10:
                 self.turrainheight -= 50
-            Turrain(RectangleAsset(self.turrainwidth, self.height, noline, black), (x * self.turrainwidth, self.turrainheight))
+            Turrain(RectangleAsset(self.turrainwidth, self.height * 2, noline, black), (x * self.turrainwidth, self.turrainheight))
+            if x == self.player1.x:
+                self.player1.y = self.turrainheight
+            elif x == self.player2.x:
+                self.player2.y = self.turrainheight
     
     def step(self):
         self.player1.step()
