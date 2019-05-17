@@ -33,7 +33,7 @@ class Bullet(Sprite):
     asset = ImageAsset("blast.png", Frame(0,0,8,8), 8, 'horizontal')
     
     def __init__(self, position, direction, power):
-        super().__init__(Bullet.asset, [position[0] - 50 * math.sin(direction), position[1] - 50 * math.cos(direction)], CircleAsset(10))
+        super().__init__(Bullet.asset, [position[0] - 50 * math.sin(direction), position[1] - 50 * math.cos(direction)], CircleAsset(5))
         self.speed = power
         self.vx = self.speed * math.sin(direction)
         self.vy = self.speed * math.cos(direction)
@@ -110,7 +110,7 @@ class Turret(Sprite):
         
     def shoot(self, event):
         if self.turn:
-            Bullet((self.x + 110 * math.sin(self.rotation), self.y + 110 * math.cos(self.rotation)), self.rotation, self.power)
+            Bullet((self.x + 100 * math.sin(self.rotation), self.y + 100 * math.cos(self.rotation)), self.rotation, self.power)
         
     def step(self):
         self.rotation += self.vr
