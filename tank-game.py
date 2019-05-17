@@ -204,8 +204,9 @@ class TankGame(App):
                         self.player2.turn = True
                         print("Player 2 turn")
                     self.loser = []
-                    self.createTurrain()
                     self.placePlayers()
+                    self.createTurrain()
+
                         
                 elif bullet.collidingWithSprites(Turrain):
                     Explosion((bullet.x, bullet.y))
