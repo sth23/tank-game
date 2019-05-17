@@ -69,8 +69,8 @@ class Turrain(Sprite):
         super().__init__(asset, position)
 
 class Turret(Sprite):
-    def __init__(self, position, player, turn):
-        super().__init__(RectangleAsset(5, 40, noline, black), position)
+    def __init__(self, position, player, color):
+        super().__init__(RectangleAsset(5, 40, noline, color), position)
         self.vr = 0
         self.maxspin = 0.05
         self.rotation = math.pi
@@ -138,8 +138,8 @@ class TankGame(App):
         
         TankGame.listenKeyEvent("keyup", "space", self.toggleTurns)
         
-        self.player1 = Turret((100,100), 1, True)
-        self.player2 = Turret((200, 200), 2, False)
+        self.player1 = Turret((100,100), 1, True, red)
+        self.player2 = Turret((200, 200), 2, False, blue)
         
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
         self.turrainwidth = 20
