@@ -150,9 +150,11 @@ class TankGame(App):
         if self.player1.turn == True:
             self.player1.turn = False
             self.player2.turn = True
+            print("Player 2 Turn")
         else:
             self.player1.turn = True
             self.player2.turn = False
+            print("Player 1 Turn")
             
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
