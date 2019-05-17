@@ -123,7 +123,7 @@ class TankGame(App):
         if self.playerturn == 2:
             self.playerturn == 2
         else:
-            self.playerturn == 1
+            self.playerturn == 2
         print(self.playerturn)
     
     def step(self):
