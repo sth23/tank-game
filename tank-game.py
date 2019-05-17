@@ -131,6 +131,9 @@ class TankGame(App):
         self.player1 = Turret((100,100), 1, True)
         self.player2 = Turret((200, 200), 2, False)
         
+        self.turrainheight = 0
+        self.createTurrain()
+        
     def toggleTurns(self, event):
         if self.player1.turn == True:
             self.player1.turn = False
@@ -140,7 +143,9 @@ class TankGame(App):
             self.player2.turn = False
             
     def createTurrain(self):
-        
+        for x in range(0, self.width // 10):
+            self.turrainheight = random.randint(self.height / 4, self.height)
+            Turrain(RecangleAsset(10, self.turrainheight, noline, black), (x * 10, self.height - self.turrainheight)
     
     def step(self):
         self.player1.step()
