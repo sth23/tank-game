@@ -141,7 +141,7 @@ class TankGame(App):
         self.player1 = Turret((100,100), 1, True, red)
         self.player2 = Turret((200, 200), 2, False, blue)
         
-        self.turrainheight = random.randint(self.height // 4, self.height - 20)
+        self.turrainheight = 0
         self.turrainwidth = 20
         self.createTurrain()
         
@@ -154,6 +154,7 @@ class TankGame(App):
             self.player2.turn = False
             
     def createTurrain(self):
+        self.turrainheight = random.randint(self.height // 4, self.height - 20)
         for x in range(0, self.width // 10):
             self.turrainheight = self.turrainheight + random.randint(-40, 40)
             if self.turrainheight >= self.height:
