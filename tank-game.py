@@ -171,8 +171,11 @@ class TankGame(App):
             if bullet.x < 0 or bullet.x > self.width or bullet.y > self.height:
                 bullet.destroy()
             else:
-                for x in bullet.collidingWithSprites(Turret):
-                    Explosion((bullet.x, bullet.y))
+                if bullet.collidingWithSprites(Turret):
+                    for x in bullet.collidingWithSprites(Turret):
+                        Explosion((bullet.x, bullet.y))
+                        bullet.destroy()
+                elif bullet.collidingWithSprites(Turrain):
                     bullet.destroy()
                     
         for explosion in self.getSpritesbyClass(Explosion):
