@@ -147,7 +147,7 @@ class TankGame(App):
         self.createTurrain()
         
     def toggleTurns(self, event):
-        if self.winner == False
+        if self.winner == False:
             if self.player1.turn == True:
                 self.player1.turn = False
                 self.player2.turn = True
