@@ -142,10 +142,9 @@ class TankGame(App):
             
         for bullet in self.getSpritesbyClass(Bullet):
             bullet.step()
-            if bullet.x < 0 or bullet.x > self.width:
+            if bullet.x < 0 or bullet.x > self.width or bullet.y > self.height:
                 bullet.destroy()
-            
-        for e
+                print("destroy bullet")
             
         # Winner starts next round
 
