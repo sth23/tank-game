@@ -57,9 +57,6 @@ class Turret(Sprite):
     rect = RectangleAsset(5, 40, noline, black)
     
     def __init__(self, position, player):
-        self.gamewidth = width
-        self.gameheight = height
-
         super().__init__(Turret.rect, position)
         self.maxspin = 0.05
         self.rotation = math.pi
