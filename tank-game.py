@@ -92,7 +92,7 @@ class Turret(Sprite):
         self.vr = 0
         
     def powerUp(self, event):
-        if self.power < 20:
+        if self.power < 10:
             self.power += 1
         print(self.power)
             
