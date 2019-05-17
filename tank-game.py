@@ -141,6 +141,7 @@ class TankGame(App):
         self.player1 = Turret((100,100), 1, True, red)
         self.player2 = Turret((200, 200), 2, False, blue)
         self.loser = []
+        self.winner = False
         
         self.turrainheight = 0
         self.turrainwidth = 20
