@@ -114,7 +114,7 @@ class TankGame(App):
         super().__init__()
         self.playerturn = 1
         
-        TankGame.listenKeyEvent("keydown", "space", self.toggleTurns)
+        TankGame.listenKeyEvent("keyup", "space", self.toggleTurns)
         
         self.player1 = Turret((100,100), 1)
         self.player2 = Turret((200, 200), 2)
