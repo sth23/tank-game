@@ -110,7 +110,7 @@ class Turret(Sprite):
         
     def shoot(self, event):
         if self.turn:
-            Bullet((self.x + 100 * math.sin(self.rotation), self.y + 100 * math.cos(self.rotation)), self.rotation, self.power)
+            Bullet((self.x + 110 * math.sin(self.rotation), self.y + 110 * math.cos(self.rotation)), self.rotation, self.power)
         
     def step(self):
         self.rotation += self.vr
