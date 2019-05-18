@@ -77,6 +77,7 @@ class Turret(Sprite):
         self.fxcenter = 0.5
         self.fycenter = 0
         self.power = 1
+        self.maxpower = 20
         self.player = player
         self.turn = turn
         
@@ -111,7 +112,7 @@ class Turret(Sprite):
         
     def powerUp(self, event):
         if self.turn:        
-            if self.power < 20:
+            if self.power < self.maxpower:
                 self.power += 0.25
             print("Power: " + str(self.power))
             
@@ -160,8 +161,10 @@ class TankGame(App):
     def placePlayers(self):
         self.player1.rotation = math.pi
         self.player1.x = random.randint(2, (self.width // self.turrainwidth) // 3)
+        self.player1.power = 1
         self.player2.rotation = math.pi
         self.player2.x = random.randint((self.width // self.turrainwidth) * 2 // 3, self.width // self.turrainwidth - 2)
+        self.player2.power = 1
             
     def createTurrain(self):
         self.turrainheight = random.randint(self.height // 4, self.height - 20)
