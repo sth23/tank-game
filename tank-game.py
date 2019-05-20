@@ -224,7 +224,6 @@ class TankGame(App):
                     for x in self.getSpritesbyClass(Turrain):
                         x.destroy()
                     self.createTurrain()
-
                         
                 elif bullet.collidingWithSprites(Turrain):
                     Explosion((bullet.x, bullet.y))
