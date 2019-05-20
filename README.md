@@ -3,3 +3,4 @@ Potential Next Steps:
  - Create more graphics for turret/tank
  - Sound effects
  - Way to keep score
+*** Make turrain one big polygon & randomly generate coordinates for vertices...
