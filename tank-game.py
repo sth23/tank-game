@@ -42,6 +42,18 @@ class Explosion(Sprite):
             if self.countdown == 0:
                 self.destroy()
                 
+class Trail(Sprite):
+    circ = CircleAsset(1, noline, black)
+    
+    def __init__(self, position):
+        super().__init(Trail.circ, position)
+        self.count = 100
+        
+    def step(self):
+        self.count -= 1
+        if self.count == 0:
+            self.destroy()
+                
 class Bullet(Sprite):
     asset = ImageAsset("blast.png", Frame(0,0,8,8), 8, 'horizontal')
     
@@ -218,6 +230,9 @@ class TankGame(App):
                     
         for explosion in self.getSpritesbyClass(Explosion):
             explosion.step()
+            
+        for trail in self.getSpritesbyClass(Trail):
+            trail.step()
             
         # Winner starts next round
 
