@@ -72,6 +72,8 @@ class Bullet(Sprite):
         self.y += self.vy
         self.vy += self.deltavy
         
+        Trail((self.x, self.y))
+        
         # manage bullet animation
         self.setImage(self.bulletphase%7)
         self.bulletphase += 1
