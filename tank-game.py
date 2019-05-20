@@ -46,7 +46,7 @@ class Trail(Sprite):
     circ = CircleAsset(1, noline, black)
     
     def __init__(self, position):
-        super().__init(Trail.circ, position)
+        super().__init__(Trail.circ, position)
         self.count = 100
         
     def step(self):
