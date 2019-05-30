@@ -158,7 +158,7 @@ class TankGame(App):
         self.loser = []
         
         self.turrainheight = 0
-        self.turrainwidth = 10
+        self.turrainwidth = 15
         self.placePlayers()
         self.createTurrain()
         
