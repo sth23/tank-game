@@ -71,7 +71,7 @@ class Bullet(Sprite):
     def step(self):
         self.x += self.vx
         self.y += self.vy
-        self.vx += Bullet.wind * 0.01
+        self.vx += Bullet.wind * 0.005
         self.vy += self.deltavy
         
         Trail((self.x, self.y))
