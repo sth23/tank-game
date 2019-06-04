@@ -198,7 +198,8 @@ class TankGame(App):
                 self.player2.x = self.player2.x * self.turrainwidth + self.turrainwidth / 2
                 self.player2.y = self.turrainheight
         Bullet.wind = random.randint(-5,5)
-        print(Bullet.wind)
+        self.windstrength = ["Very Strong West Wind", "Strong West Wind", "Moderate West Wind", "Light to Moderate West Wind", "Light West Wind", "No Wind", "Light East Wind", "Light to Moderate East Wind", "Moderate East Wind", "Strong East Wind", "Very Strong East Wind"]
+        print(self.windstrength[Bullet.wind + 5])
     
     def step(self):
         self.player1.step()
