@@ -55,6 +55,7 @@ class Trail(Sprite):
             self.destroy()
                 
 class Bullet(Sprite):
+    Bullet.wind = 0
     asset = ImageAsset("blast.png", Frame(0,0,8,8), 8, 'horizontal')
     
     def __init__(self, position, direction, power):
@@ -66,10 +67,12 @@ class Bullet(Sprite):
         self.vr = 0
         self.fxcenter = self.fycenter = 0.5
         self.bulletphase = 0
+        self.wind = 
         
     def step(self):
         self.x += self.vx
         self.y += self.vy
+        self.vx += Bullet.wind
         self.vy += self.deltavy
         
         Trail((self.x, self.y))
@@ -195,6 +198,7 @@ class TankGame(App):
             if x == self.player2.x:
                 self.player2.x = self.player2.x * self.turrainwidth + self.turrainwidth / 2
                 self.player2.y = self.turrainheight
+        Bullet.wind = random.randint(-5,5)
     
     def step(self):
         self.player1.step()
