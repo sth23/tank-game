@@ -55,7 +55,7 @@ class Trail(Sprite):
             self.destroy()
                 
 class Bullet(Sprite):
-    Bullet.wind = 0
+    wind = 0
     asset = ImageAsset("blast.png", Frame(0,0,8,8), 8, 'horizontal')
     
     def __init__(self, position, direction, power):
