@@ -67,7 +67,6 @@ class Bullet(Sprite):
         self.vr = 0
         self.fxcenter = self.fycenter = 0.5
         self.bulletphase = 0
-        self.wind = 
         
     def step(self):
         self.x += self.vx
